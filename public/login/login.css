@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Manrope:wght@200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.left {
+  padding: 3rem;
+  color: white;
+  background-color: #0f2741;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
+}
+
+.logo-link {
+  color: white;
+  text-decoration: none;
+}
+
+.logo::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.intro {
+  width: 72%;
+  margin: auto 0;
+}
+
+.intro h2 {
+  margin-bottom: 18px;
+  font-size: 62px;
+  line-height: 1;
+}
+
+.intro p {
+  line-height: 1.7;
+  color: #c7d2e0;
+}
+
+.right {
+  background-color: white;
+  padding: 4.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h2 {
+  width: 460px;
+  font-size: 3rem;
+  color: #0f1f33;
+}
+
+.title p {
+  width: 460px;
+  margin-top: 10px;
+  color: #4b5563;
+}
+
+.form {
+  margin-top: 28px;
+  width: 460px;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+.row label {
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #6b7280;
+}
+
+.row-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-top a {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #1d4f8a;
+  font-weight: 600;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-color: #d1d5db;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: #f3f4f6;
+}
+
+.input:focus-within {
+  border-color: #2563eb;
+}
+
+.input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.input input::placeholder {
+  color: #9ca3af;
+}
+
+.icon {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.form button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0f2741;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #143557;
+}
+
+.right hr {
+  margin-top: 24px;
+  width: 460px;
+  border: none;
+  border-top-color: #e5e7eb;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.signup {
+  width: 460px;
+  margin-top: 12px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.signup a {
+  color: #0f2741;
+  font-weight: 700;
+  text-underline-offset: 5px;
+}
+
+.links {
+  width: 460px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #6b7280;
+}
+
+#error-message {
+  display: none;
+  color: #dc2626;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 940px) {
+  .left {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .right {
+    padding: 36px 16px;
+  }
+
+  .title h2 {
+    font-size: 38px;
+  }
+
+  .title p {
+    font-size: 13px;
+  }
+}

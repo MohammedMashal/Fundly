@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="userDashboard.css" />
+    <script type="module" src="userDashboard.js"></script>
+    <title>User Dashboard | Fundly</title>
+  </head>
+  <body>
+    <main class="ud-page">
+      <aside class="ud-sidebar">
+        <div>
+          <header class="ud-brand-row">
+            <h1><a class="logo-link" href="../index.html">Fundly</a></h1>
+            <button type="button" class="profile-chip">Profile</button>
+          </header>
+
+          <nav class="ud-nav" aria-label="Primary">
+            <a
+              class="ud-nav-link active"
+              id="nav-dashboard"
+              href="#dashboard-view"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >library_books</span
+              >
+              My Campaigns
+            </a>
+            <a class="ud-nav-link" id="nav-history" href="#history-view">
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >history</span
+              >
+              Pledge History
+            </a>
+            <a class="ud-nav-link" id="nav-settings" href="#settings-view">
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >settings</span
+              >
+              Settings
+            </a>
+          </nav>
+        </div>
+
+        <a class="ud-logout" href="#" id="logout-btn">
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >logout</span
+          >
+          Logout
+        </a>
+      </aside>
+
+      <section class="ud-main">
+        <header class="ud-topbar">
+          <h2 id="welcome-title">My Campaigns</h2>
+
+          <div class="ud-top-actions">
+            <button type="button" class="avatar" aria-label="User profile">
+              US
+            </button>
+          </div>
+        </header>
+
+        <section id="dashboard-view" class="view-panel active-view">
+          <div class="campaign-grid" id="my-campaigns-grid"></div>
+        </section>
+
+        <section id="history-view" class="view-panel">
+          <div class="history-card">
+            <h3>Pledge History</h3>
+            <div class="history-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pledge ID</th>
+                    <th>Date</th>
+                    <th>Campaign</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody id="investment-history-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="settings-view" class="view-panel">
+          <div class="settings-card">
+            <h3>Profile Settings</h3>
+            <p class="settings-subtitle">
+              Update your personal information and save changes.
+            </p>
+
+            <form
+              id="profile-form"
+              class="profile-form"
+              action="#"
+              method="post"
+            >
+              <div class="form-grid">
+                <div class="field">
+                  <label for="full-name">Full Name</label>
+                  <input id="full-name" name="fullName" type="text" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+              </div>
+
+              <button type="submit" class="update-btn">Update Profile</button>
+              <p id="profile-message" class="profile-message"></p>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="edit-campaign-dialog" class="edit-campaign-dialog">
+      <form id="edit-campaign-form" class="edit-campaign-form" method="dialog">
+        <header class="edit-dialog-head">
+          <h3>Edit Campaign</h3>
+          <button
+            type="button"
+            id="edit-cancel-top"
+            class="edit-close"
+            aria-label="Close dialog"
+          >
+            ×
+          </button>
+        </header>
+
+        <input id="edit-campaign-id" type="hidden" />
+
+        <div class="field">
+          <label for="edit-title">Title</label>
+          <input id="edit-title" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="edit-category">Category</label>
+          <select id="edit-category" required>
+            <option value="Technology">Technology</option>
+            <option value="Art">Art</option>
+            <option value="Games">Games</option>
+            <option value="Design">Design</option>
+            <option value="Food">Food</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Music">Music</option>
+            <option value="Film">Film</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="edit-description">Description</label>
+          <textarea id="edit-description" rows="4" required></textarea>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="edit-goal">Goal</label>
+            <input id="edit-goal" type="number" min="1" required />
+          </div>
+          <div class="field">
+            <label for="edit-deadline">Deadline</label>
+            <input id="edit-deadline" type="date" required />
+          </div>
+        </div>
+
+        <p id="edit-campaign-message" class="profile-message"></p>
+
+        <footer class="edit-dialog-actions">
+          <button type="button" id="edit-cancel-btn" class="btn-cancel">
+            Cancel
+          </button>
+          <button type="submit" id="edit-save-btn" class="update-btn">
+            Save Changes
+          </button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="delete-campaign-dialog" class="delete-campaign-dialog">
+      <form
+        id="delete-campaign-form"
+        class="delete-campaign-form"
+        method="dialog"
+      >
+        <header class="edit-dialog-head">
+          <h3>Delete Campaign</h3>
+          <button
+            type="button"
+            id="delete-cancel-top"
+            class="edit-close"
+            aria-label="Close dialog"
+          >
+            ×
+          </button>
+        </header>
+
+        <p class="delete-dialog-text">
+          Are you sure you want to delete this campaign? This action cannot be
+          undone.
+        </p>
+
+        <footer class="edit-dialog-actions">
+          <button type="button" id="delete-cancel-btn" class="btn-cancel">
+            Cancel
+          </button>
+          <button type="submit" id="delete-confirm-btn" class="delete-btn">
+            Delete
+          </button>
+        </footer>
+      </form>
+    </dialog>
+  </body>
+</html>

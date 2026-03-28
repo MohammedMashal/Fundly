@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+    <link rel="stylesheet" href="home.css" />
+    <script type="module" src="home.js"></script>
+    <title>Fundly</title>
+  </head>
+
+  <body>
+    <header class="top-header">
+      <h1><a class="brand-link" href="./index.html">Fundly</a></h1>
+      <div class="header-search">
+        <span class="material-symbols-outlined">search</span>
+        <input type="text" placeholder="Search campaigns..." />
+      </div>
+      <div class="auth-links" id="auth-links">
+        <a href="./login/login.html" class="login-link" id="login-link"
+          >Login</a
+        >
+        <a href="./sign-up/sign-up.html" class="signup-link" id="signup-link"
+          >Sign Up</a
+        >
+
+        <div class="user-menu hidden" id="user-menu">
+          <button class="user-avatar-btn" id="user-menu-btn" type="button">
+            <span id="user-initials">hello</span>
+          </button>
+
+          <div class="user-dropdown hidden" id="user-dropdown">
+            <div class="user-dropdown-head">
+              <p class="user-dropdown-name" id="dropdown-user-name"></p>
+              <p class="user-dropdown-email" id="dropdown-user-email"></p>
+            </div>
+
+            <nav class="user-dropdown-nav">
+              <a href="./Create-Campaign/createCampaign.html">
+                <span class="material-symbols-outlined menu-item-icon"
+                  >rocket_launch</span
+                >
+                New Campaign
+              </a>
+              <a href="./User-dashboard/userDashboard.html#dashboard-view">
+                <span class="material-symbols-outlined menu-item-icon"
+                  >folder_open</span
+                >
+                My Campaigns
+              </a>
+              <a href="./User-dashboard/userDashboard.html#history-view">
+                <span class="material-symbols-outlined menu-item-icon"
+                  >favorite</span
+                >
+                Pledge History
+              </a>
+              <a href="./User-dashboard/userDashboard.html#settings-view">
+                <span class="material-symbols-outlined menu-item-icon"
+                  >settings</span
+                >
+                Settings
+              </a>
+              <a
+                href="./Admin-dashboard/adminDashboard.html"
+                id="dropdown-admin-dashboard-link"
+              >
+                <span class="material-symbols-outlined menu-item-icon"
+                  >admin_panel_settings</span
+                >
+                Admin Dashboard
+              </a>
+            </nav>
+
+            <div class="user-dropdown-logout" id="dropdown-logout-btn">
+              <span class="material-symbols-outlined menu-item-icon"
+                >logout</span
+              >
+              Log out
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-block">
+        <h5>Empowering the Next Generation of Investors</h5>
+        <h2>Turn your ideas into reality.</h2>
+        <p>
+          Access premier investment opportunities through Fundly, a platform
+          engineered for structural integrity, clarity, and unyielding trust.
+        </p>
+      </section>
+
+      <section class="trust-row">
+        <div class="trust-item">
+          <span class="trust-title">Transparent</span>
+          <span class="trust-note">Clear funding terms</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-title">Secure</span>
+          <span class="trust-note">Protected transactions</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-title">Trusted</span>
+          <span class="trust-note">Proven track record</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-title">Connected</span>
+          <span class="trust-note">Global community</span>
+        </div>
+      </section>
+
+      <section class="campaigns-block">
+        <div class="campaigns-head">
+          <h2>Featured Campaigns</h2>
+          <a class="all-campaigns-link" href="./Campaigns/campaigns.html">
+            Explore All Campaigns
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="campaign-list" id="campaigns-container"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Fundly</h4>
+          <p>Modern investing for everyone. Transparent, secure, trusted.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="#">Browse Campaigns</a>
+          <a href="#">How It Works</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Fundly. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

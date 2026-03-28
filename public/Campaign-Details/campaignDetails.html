@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="campaignDetails.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+    <script type="module" src="campaignDetails.js"></script>
+    <title>Campaign Details | Fundly</title>
+  </head>
+  <body>
+    <header class="top-header">
+      <h1><a class="brand-link" href="../index.html">Fundly</a></h1>
+      <div class="user-menu" id="user-menu">
+        <button class="user-avatar-btn" id="user-menu-btn" type="button">
+          <span id="user-initials">US</span>
+        </button>
+
+        <div class="user-dropdown hidden" id="user-dropdown">
+          <div class="user-dropdown-head">
+            <p class="user-dropdown-name" id="dropdown-user-name"></p>
+            <p class="user-dropdown-email" id="dropdown-user-email"></p>
+          </div>
+
+          <nav class="user-dropdown-nav" aria-label="User menu">
+            <a href="../Create-Campaign/createCampaign.html">
+              <span class="material-symbols-outlined menu-item-icon"
+                >rocket_launch</span
+              >
+              New Campaign
+            </a>
+            <a href="../User-dashboard/userDashboard.html#dashboard-view">
+              <span class="material-symbols-outlined menu-item-icon"
+                >folder_open</span
+              >
+              My Campaigns
+            </a>
+            <a href="../User-dashboard/userDashboard.html#history-view">
+              <span class="material-symbols-outlined menu-item-icon"
+                >favorite</span
+              >
+              Pledge History
+            </a>
+            <a href="../User-dashboard/userDashboard.html#settings-view">
+              <span class="material-symbols-outlined menu-item-icon"
+                >settings</span
+              >
+              Settings
+            </a>
+            <a
+              href="../Admin-dashboard/adminDashboard.html"
+              id="dropdown-admin-dashboard-link"
+              class="hidden"
+            >
+              <span class="material-symbols-outlined menu-item-icon"
+                >admin_panel_settings</span
+              >
+              Admin Dashboard
+            </a>
+          </nav>
+
+          <div class="user-dropdown-logout" id="dropdown-logout-btn">
+            <span class="material-symbols-outlined menu-item-icon">logout</span>
+            Log out
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="details-page">
+      <section class="content-area">
+        <section class="campaign-hero">
+          <div class="hero-header">
+            <div class="hero-icon">△</div>
+            <div>
+              <h1>Campaign</h1>
+              <p class="hero-sector">Category</p>
+            </div>
+          </div>
+          <p class="hero-description"></p>
+        </section>
+
+        <div class="details-container">
+          <section class="main-content">
+            <div class="funding-card">
+              <h2>Funding Progress</h2>
+              <div class="progress-display">
+                <progress
+                  class="campaign-progress"
+                  value="0"
+                  max="100"
+                ></progress>
+                <div class="progress-text">
+                  <span class="amount-raised">$0 of $0</span>
+                  <span class="progress-percentage">0%</span>
+                </div>
+              </div>
+              <div class="funding-stats">
+                <article class="stat">
+                  <strong id="stat-investors">0</strong>
+                  <small>Investors</small>
+                </article>
+                <article class="stat">
+                  <strong id="stat-days-left">0</strong>
+                  <small>Days Left</small>
+                </article>
+                <article class="stat">
+                  <strong id="stat-close-date">-</strong>
+                  <small>Close Date</small>
+                </article>
+              </div>
+              <button type="button" class="btn-invest">Invest Now</button>
+            </div>
+
+            <section class="info-section" id="overview-section">
+              <h2>Campaign Overview</h2>
+              <div class="overview-content">
+                <p id="overview-text"></p>
+              </div>
+            </section>
+          </section>
+
+          <aside class="sidebar-content">
+            <div class="sidebar-card">
+              <h3>Campaign Status</h3>
+              <p class="status-badge">Active - Funding</p>
+              <hr />
+              <div class="status-detail">
+                <small>Status</small>
+                <p id="status-detail-text">-</p>
+              </div>
+              <div class="status-detail" id="created-row">
+                <small>Created</small>
+                <p id="created-value">-</p>
+              </div>
+            </div>
+
+            <div class="sidebar-card" id="campaign-info-card">
+              <h3>Campaign Info</h3>
+              <div class="company-info">
+                <div id="creator-row">
+                  <small>Creator</small>
+                  <p id="creator-value">-</p>
+                </div>
+                <div id="category-row">
+                  <small>Category</small>
+                  <p id="category-value">-</p>
+                </div>
+                <div id="deadline-row">
+                  <small>Deadline</small>
+                  <p id="deadline-value">-</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-card" id="image-card">
+              <h3>Campaign Image</h3>
+              <img
+                id="campaign-image"
+                alt="Campaign image"
+                class="campaign-image"
+              />
+            </div>
+
+            <div class="sidebar-card" id="quick-stats-card">
+              <h3>Quick Stats</h3>
+              <div class="quick-stat">
+                <small>Goal</small>
+                <strong id="quick-goal">$0</strong>
+              </div>
+              <div class="quick-stat">
+                <small>Raised</small>
+                <strong id="quick-raised">$0</strong>
+              </div>
+              <div class="quick-stat">
+                <small>Progress</small>
+                <strong id="quick-progress">0%</strong>
+              </div>
+            </div>
+
+            <div class="sidebar-card" id="verification-card">
+              <h3>Verification</h3>
+              <div class="status-detail">
+                <small>Verified By</small>
+                <p>Fundly Team</p>
+              </div>
+            </div>
+
+            <button type="button" class="btn-invest-sidebar" id="invest-btn">
+              Invest Now
+            </button>
+          </aside>
+        </div>
+
+        <footer class="dashboard-footer">
+          <p>&copy; 2026 Fundly. Modern investing for everyone.</p>
+          <nav aria-label="Footer links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact</a>
+          </nav>
+        </footer>
+      </section>
+    </main>
+
+    <div id="app-toast" class="app-toast" role="status"></div>
+
+    <dialog id="invest-dialog" class="invest-dialog">
+      <form id="invest-form" class="invest-form" method="dialog">
+        <header class="invest-dialog-head">
+          <h3>Invest In Campaign</h3>
+          <button type="button" id="invest-cancel-top" class="invest-close">
+            ×
+          </button>
+        </header>
+
+        <p class="invest-subtitle" id="invest-dialog-campaign">Campaign</p>
+
+        <label for="invest-amount" class="invest-label">Amount (USD)</label>
+        <input
+          id="invest-amount"
+          name="amount"
+          type="number"
+          min="1"
+          step="1"
+          placeholder="Enter amount"
+          required
+        />
+        <p class="invest-hint">Minimum investment is $1.</p>
+        <p id="invest-error" class="invest-error hidden"></p>
+
+        <footer class="invest-actions">
+          <button
+            type="button"
+            id="invest-cancel-btn"
+            class="btn-dialog-secondary"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            id="invest-confirm-btn"
+            class="btn-dialog-primary"
+          >
+            Confirm Investment
+          </button>
+        </footer>
+      </form>
+    </dialog>
+  </body>
+</html>

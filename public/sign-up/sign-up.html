@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sign-up.css" />
+    <title>Sign Up | Fundly</title>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+    <script type="module" src="./sign-up.js"></script>
+  </head>
+
+  <body>
+    <main class="page">
+      <aside class="left">
+        <header>
+          <h1 class="logo">
+            <a class="logo-link" href="../index.html">FUNDLY</a>
+          </h1>
+        </header>
+
+        <article class="intro">
+          <h2>Build Your Access.</h2>
+          <p>
+            Create your Fundly account to unlock private opportunities and a
+            secure investment dashboard.
+          </p>
+        </article>
+      </aside>
+
+      <section class="right">
+        <header class="title">
+          <h2>Create your account</h2>
+          <p>Use your details to register and start your secure journey.</p>
+        </header>
+
+        <form id="signup-form" class="form">
+          <div id="error-message"></div>
+
+          <div class="row">
+            <label for="fullName">Full name</label>
+            <div class="input">
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                placeholder="Your Full Name"
+                required
+              />
+              <span class="icon">👤</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="email">Email</label>
+            <div class="input">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="email@address.com"
+                required
+              />
+              <span class="icon">✉</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="password">Password</label>
+            <div class="input">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Create Password"
+                minlength="8"
+                required
+              />
+              <span class="icon">🔒</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="confirmPassword">Confirm password</label>
+            <div class="input">
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                minlength="8"
+                required
+              />
+              <span class="icon">🔒</span>
+            </div>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" name="agree" id="agree" required />
+            I agree to the terms and privacy policy.
+          </label>
+
+          <button type="submit" id="submit-btn">Create account</button>
+        </form>
+
+        <hr />
+
+        <p class="signin">
+          Already have an account?
+          <a href="../login/login.html">Sign in</a>
+        </p>
+
+        <footer class="links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact</a>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

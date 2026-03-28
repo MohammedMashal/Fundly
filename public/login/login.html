@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+    <script type="module" src="./login.js"></script>
+    <title>Login | Fundly</title>
+  </head>
+  <body>
+    <main class="page">
+      <aside class="left">
+        <header>
+          <h1 class="logo">
+            <a class="logo-link" href="../index.html">FUNDLY</a>
+          </h1>
+        </header>
+
+        <article class="intro">
+          <h2>Capital Evolved.</h2>
+          <p>
+            Access premier investment opportunities through Fundly, a platform
+            engineered for structural integrity, clarity, and unyielding trust.
+          </p>
+        </article>
+      </aside>
+
+      <section class="right">
+        <header class="title">
+          <h2 id="auth-title">Welcome Back to Fundly</h2>
+          <p>Please enter your email and password to sign in.</p>
+        </header>
+
+        <form id="login-form" class="form">
+          <div id="error-message"></div>
+
+          <div class="row">
+            <label for="email">Email</label>
+            <div class="input">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="email@address.com"
+                required
+              />
+              <span class="icon">✉</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row-top">
+              <label for="password">Password</label>
+              <a href="#">Forgot password?</a>
+            </div>
+            <div class="input">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="••••••••"
+                minlength="8"
+                required
+              />
+              <span class="icon">🔒</span>
+            </div>
+          </div>
+
+          <button type="submit" id="submit-btn">Sign in</button>
+        </form>
+
+        <hr />
+
+        <p class="signup">
+          New to Fundly?
+          <a href="../sign-up/sign-up.html">Sign up</a>
+        </p>
+
+        <footer class="links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact</a>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

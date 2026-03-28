@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="createCampaign.css" />
+    <script type="module" src="createCampaign.js"></script>
+    <title>Create Campaign | Fundly</title>
+  </head>
+  <body>
+    <main class="wizard-page">
+      <header class="wizard-topbar">
+        <a class="back-link" href="../index.html">&larr; Back to Home</a>
+        <h1>Start a new campaign</h1>
+      </header>
+
+      <section class="wizard-steps" aria-label="Campaign creation steps">
+        <div class="step-item active" data-step-marker="1">
+          <div class="step-head">
+            <span class="step-number">1</span>
+            <span class="step-connector" aria-hidden="true"></span>
+          </div>
+          <div class="step-copy">
+            <h2>Campaign Basics</h2>
+            <p>Tell us more about your campaign</p>
+          </div>
+        </div>
+        <div class="step-item" data-step-marker="2">
+          <div class="step-head">
+            <span class="step-number">2</span>
+            <span class="step-connector" aria-hidden="true"></span>
+          </div>
+          <div class="step-copy">
+            <h2>Funding &amp; Timeline</h2>
+            <p>Set your goal and timeline</p>
+          </div>
+        </div>
+        <div class="step-item" data-step-marker="3">
+          <div class="step-head">
+            <span class="step-number">3</span>
+            <span class="step-connector" aria-hidden="true"></span>
+          </div>
+          <div class="step-copy">
+            <h2>Story &amp; Media</h2>
+            <p>Share your project's story</p>
+          </div>
+        </div>
+        <div class="step-item" data-step-marker="4">
+          <div class="step-head">
+            <span class="step-number">4</span>
+          </div>
+          <div class="step-copy">
+            <h2>Review &amp; Launch</h2>
+            <p>Review and publish your project</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wizard-content">
+        <form id="campaign-form" class="wizard-form" novalidate>
+          <div id="error-msg" class="message-box error"></div>
+          <div id="success-msg" class="message-box success"></div>
+
+          <section class="step-panel active" data-step="1">
+            <div class="field-group">
+              <label for="campaign-title">Campaign Title *</label>
+              <input
+                id="campaign-title"
+                name="title"
+                type="text"
+                placeholder="Give your campaign a compelling title"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="short-description">Short Description *</label>
+              <input
+                id="short-description"
+                name="shortDescription"
+                type="text"
+                placeholder="Briefly describe what you're creating"
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="category">Category *</label>
+              <select id="category" name="category" required>
+                <option value="">Choose a category</option>
+                <option value="Technology">Technology</option>
+                <option value="Art">Art</option>
+                <option value="Games">Games</option>
+                <option value="Design">Design</option>
+                <option value="Food">Food</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Music">Music</option>
+                <option value="Film">Film</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="description">Campaign Description *</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="6"
+                placeholder="Describe your project in detail"
+                required
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="step-panel" data-step="2">
+            <div class="grid-two">
+              <div class="field-group">
+                <label for="goal">Funding Goal (USD) *</label>
+                <input
+                  id="goal"
+                  name="goal"
+                  type="number"
+                  min="1000"
+                  placeholder="Enter your funding goal"
+                  required
+                />
+              </div>
+              <div class="field-group">
+                <label for="deadline">Campaign Deadline *</label>
+                <input id="deadline" name="deadline" type="date" required />
+              </div>
+            </div>
+          </section>
+
+          <section class="step-panel" data-step="3">
+            <div class="field-group">
+              <label for="image-file">Campaign Image *</label>
+              <input
+                id="image-file"
+                name="imageFile"
+                type="file"
+                accept="image/*"
+                required
+              />
+              <small class="field-hint"
+                >Upload a clear image from your device (JPG, PNG, WEBP).</small
+              >
+            </div>
+          </section>
+
+          <section class="step-panel" data-step="4">
+            <article class="review-card">
+              <h3>Ready to launch?</h3>
+              <p>
+                Review your information then click
+                <strong>Publish Campaign</strong>. Your campaign will be
+                submitted for admin approval.
+              </p>
+              <ul>
+                <li>
+                  <strong>Title:</strong> <span id="review-title">-</span>
+                </li>
+                <li>
+                  <strong>Category:</strong> <span id="review-category">-</span>
+                </li>
+                <li><strong>Goal:</strong> <span id="review-goal">-</span></li>
+                <li>
+                  <strong>Deadline:</strong> <span id="review-deadline">-</span>
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <footer class="wizard-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="prev-btn"
+              disabled
+            >
+              &larr; Previous
+            </button>
+            <p id="step-indicator">Step 1 of 4</p>
+            <button type="button" class="btn btn-primary" id="next-btn">
+              <span id="next-btn-label">Next</span>
+              <span class="btn-next-arrow" aria-hidden="true">→</span>
+            </button>
+          </footer>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
